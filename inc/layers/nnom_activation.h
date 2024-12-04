@@ -45,7 +45,7 @@ typedef struct _nnom_activation_fixed_q_t
 // leaky relu
 typedef struct _nnom_activation_leaky_relu_t
 {
-	nnom_activation_t super;
+	nnom_activation_t super;	// super class, initialize with entry rather than pointer
 	q7_t alpha;					// alpha is present by q0.7 format. (-128 = -1) 
 } nnom_activation_leaky_relu_t;
 
