@@ -473,6 +473,7 @@ def quantize_rnn_intermediate_output(layer, features):
     return []
 
 def quantize_output(model, x_test, quantize_method='max_min', layer_offset=False, calibrate_size=None):
+    print('quantize output...\r\n')
     # limit the test data size
     if(calibrate_size is not None):
         if (x_test.shape[0] > calibrate_size):
@@ -588,6 +589,7 @@ def layer_name_from_tensor(t):
 
 def quantize_weights(model, name='weights.h', format='hwc', per_channel_quant=True, layer_q_list=None):
     # Quantize weights to 8-bits using (min,max) and write to file
+    print("Quantizing weights...\r\n")
     f = open(name, 'w')
     f.write('#include "nnom.h"\n\n')
     f.write('/* Weights, bias and Q format */\n')

@@ -322,7 +322,7 @@ struct _nnom_layer_t
 	nnom_layer_stat_t stat; // stats, timing, ops
 };
 
-// activation base
+// activation base, super class must be the first member of the sub class
 struct _nnom_activation_t
 {
 	nnom_status_t (*run)(struct _nnom_activation_t *act);

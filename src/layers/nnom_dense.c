@@ -41,7 +41,7 @@ nnom_layer_t *dense_s(const nnom_dense_config_t *config)
 	out = (void *)((uint8_t*)in + sizeof(nnom_layer_io_t));
 	comp = (void *)((uint8_t*)out + sizeof(nnom_layer_io_t));
 
-	// set type in layer parent
+	// set type in super class
 	layer->super.type = NNOM_DENSE;
 	// set buf state
 	in->type = NNOM_TENSOR_BUF_TEMP;
