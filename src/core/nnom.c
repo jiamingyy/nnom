@@ -207,6 +207,7 @@ static nnom_layer_io_t *allocate_io(nnom_layer_io_t *io)
 	}
 }
 
+// last[output] -> curr[input]
 // hook the current layer to the input layer
 // this function only to connect (single output layer) to (single input layer).
 static nnom_layer_t *model_hook(nnom_layer_t *curr, nnom_layer_t *last)
@@ -1059,7 +1060,7 @@ nnom_status_t model_run_to(nnom_model_t *m, nnom_layer_t *end_layer)
 		// check if finished
 		if (layer == end_layer || layer->shortcut == NULL)
 			break;
-		layer = layer->shortcut;
+		layer = layer->shortcut; // go to next layer
 		layer_num++;
 	}
 

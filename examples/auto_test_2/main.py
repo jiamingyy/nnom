@@ -132,7 +132,7 @@ def main():
 
     # evaluate in Keras (for comparision)
     scores = evaluate_model(model, x_test, y_test)
-c
+
     # generate NNoM model, x_test is the calibration dataset used in quantisation process
     generate_model(model,  x_test, format='hwc', per_channel_quant=False, name="weights.h")
 
